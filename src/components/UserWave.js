@@ -3,7 +3,7 @@ import { Tile } from "./Tile";
 
 export const UserWave = ({transcript,total_time,index})=>
 {
-    return <div class="row">
+    return <div className="row">
         <div className="col-md-3">
             26% Andrew S.
       </div>

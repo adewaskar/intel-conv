@@ -40,3 +40,21 @@
 .share button{
     background-color: #1297f5;
 }
+.word.active{
+    background-color:#bee1fb;
+    color:#000;
+}
+.search-box{
+    width: 250px;
+}
+
+.search-box .input-group-text{
+    background: transparent;
+    border-right: 0;
+    border-radius: 0;
+
+}
+
+.search-transcript{
+    margin-top: 20px;
+}

@@ -1,11 +1,12 @@
 import { Header } from "./Header"
 import { DATA } from '../data/transcript';
-import { useState,useRef } from "react";
+import { useState,useRef,useEffect } from "react";
 import {Waveform} from './Waveform'
 import { Transcript } from "./Transcript";
 
-const AUDIO_URL = '../data/audio.wav';
-const audio = new Audio(AUDIO_URL);
+import AUDIO from '../data/audio.wav'
+// const audio = new Audio(AUDIO_URL);
+let audio = new Audio(AUDIO)
 
 export const Main = ({})=>
 {
@@ -15,18 +16,33 @@ export const Main = ({})=>
                 w.startTime=Number(w.startTime.replace('s',''))            
                 w.endTime=Number(w.endTime.replace('s',''))            
             })
-    })
-    let [data, setData] = useState(TRANSCRIPT);
-    let [player, setPlayer] = useState({
-        play:false,
-    })
+        })
+        let [data, setData] = useState(TRANSCRIPT);
+        let [searchText, setsearchText] = useState(null);
+        let [player, setPlayer] = useState({
+            play: false,
+            currentTime:null
+        })
+
+        useEffect(() => {
+            audio.addEventListener('timeupdate', (e) => {
+                console.log(e.target.currentTime,'e')
+                setPlayer({ ...player,currentTime: e.target.currentTime });
+            });
+        },[]);
+    
+    audio.crossOrigin = 'anonymous';
     const audioEl = useRef(null)
-    console.log(audioEl,'audioEl')
-    return <div class="main">
-        <audio ref={audioEl} src={AUDIO_URL} style={{ display: 'none' }} />
+    return <div className="main">
         <div className="container-fluid">
             <Header player={player} setPlay={(play) => {
-                audioEl.current.play();
+                if (play)
+                {
+                 audio.play();                    
+                }
+                else {
+                    audio.pause();
+                }
                 setPlayer({
                     play:play
                 })
@@ -34,7 +50,13 @@ export const Main = ({})=>
         </div>
         <div className="container">
                 {/* <Waveform transcript={data} /> */}
-        <Transcript transcript={data}/>
+            <Transcript wordClick={(word) => {
+                audio.currentTime = word.startTime;
+                audio.play();
+                setPlayer({
+                    currentTime: word.startTime
+                })
+            }} currentTime={player.currentTime} transcript={data}/>
     </div>
     </div>
 }

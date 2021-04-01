@@ -4,7 +4,7 @@ export const Waveform = ({transcript})=>
 {
     const D = JSON.parse(JSON.stringify(transcript));
     const total_time = D.word_timings.pop().pop().endTime;
-    return <div class="waveform">
+    return <div className="waveform">
         <div className="row">
             <div className="col-md-3">
                 <span>0:28/{total_time}</span>
