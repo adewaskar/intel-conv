@@ -1,0 +1,42 @@
+/* .user-transcript {
+    color: #3aa7f6;
+} */
+
+.user-transcript.ind-0 .time{
+    color: #3aa7f6;
+    font-weight: 500;
+
+}
+
+.user-transcript.ind-1 .time{
+    color: #967aeb;
+    font-weight: 500;
+}
+
+.user-transcript.ind-0 .text{
+    padding: 0 10px;
+    border-left: 2px solid;
+}
+
+.user-transcript.ind-1 .text{
+    padding: 0 10px;
+    border-left: 2px solid;
+}
+
+.user-transcript{
+    margin: 20px;
+    text-align: left;
+}
+
+.controls .play-pause{
+    background: #1297f5;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.header{
+    padding: 15px;
+}
+.share button{
+    background-color: #1297f5;
+}

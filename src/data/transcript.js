@@ -1,4 +1,4 @@
-{
+export const DATA = {
     "transcript_text": [
       "This is Brian Isaacson with Guardian mortgage company at the sound of the tone, please leave your name phone number and a brief message, and I will return your call. Thank you.",
       "Sounds good"
