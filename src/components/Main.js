@@ -18,7 +18,7 @@ export const Main = ({})=>
             })
         })
         let [data, setData] = useState(TRANSCRIPT);
-        let [searchText, setsearchText] = useState(null);
+        let [searchText, setSearchText] = useState(null);
         let [player, setPlayer] = useState({
             play: false,
             currentTime:null
@@ -26,8 +26,7 @@ export const Main = ({})=>
 
         useEffect(() => {
             audio.addEventListener('timeupdate', (e) => {
-                console.log(e.target.currentTime,'e')
-                setPlayer({ ...player,currentTime: e.target.currentTime });
+                setPlayer({currentTime: e.target.currentTime,play:true });
             });
         },[]);
     
@@ -49,12 +48,15 @@ export const Main = ({})=>
             }}/>
         </div>
         <div className="container">
-                {/* <Waveform transcript={data} /> */}
-            <Transcript wordClick={(word) => {
+            <Waveform setCurrentTime={t => {
+                setPlayer({currentTime: t,play:true });
+            }} currentTime={player.currentTime}  transcript={data} />
+            <Transcript searchText={searchText} setSearchText={setSearchText} wordClick={(word) => {
                 audio.currentTime = word.startTime;
                 audio.play();
                 setPlayer({
-                    currentTime: word.startTime
+                    currentTime: word.startTime,
+                    play:true
                 })
             }} currentTime={player.currentTime} transcript={data}/>
     </div>

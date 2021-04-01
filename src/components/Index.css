@@ -14,13 +14,15 @@
 }
 
 .user-transcript.ind-0 .text{
-    padding: 0 10px;
+    padding: 8px 10px 20px;
     border-left: 2px solid;
+    cursor: pointer;
 }
 
 .user-transcript.ind-1 .text{
-    padding: 0 10px;
+    padding: 8px 10px 20px;
     border-left: 2px solid;
+    cursor: pointer;
 }
 
 .user-transcript{
@@ -57,4 +59,39 @@
 
 .search-transcript{
     margin-top: 20px;
+}
+.word.search-text{
+    background-color: yellow;
+    color:#000;
+}
+
+.user-transcript.ind-0 .text:hover,.user-transcript.ind-1 .text:hover
+{
+    background: #f3fafe;
+}
+
+.tile.ind-0{
+    background: #967aeb;;
+}
+
+.tile.ind-1{
+    background: #3aa7f6;;
+}
+
+.wave-covered{
+    position: absolute;
+    left:0;
+    position: absolute;
+    left: 0;
+    top: -24px;
+    bottom: 0;
+    height: 48px;
+    width: 100%;
+    background-color: #f3fafe;
+    opacity: 0.7;
+
+}
+
+.play-hover:hover{
+    color: #1297f5;
 }

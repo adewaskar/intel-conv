@@ -4,9 +4,9 @@ export const Header = ({player,setPlay})=>
         <div className="row">
             <div className="col-md-4">
                 <div className="controls">
-                <button className="btn btn-icon"><i className="fa fa-undo" aria-hidden="true"></i></button>
+                <button className="btn btn-icon play-hover"><i className="fa fa-undo" aria-hidden="true"></i></button>
                     <button onClick={()=>setPlay(!player.play)} className="btn btn-pause play-pause"><i className={`fa fa-${player.play ?'pause':'play'}`} aria-hidden="true"></i></button>
-                <button className="btn btn-repeat"><i className="fa fa-repeat" aria-hidden="true"></i></button>
+                <button className="btn btn-repeat play-hover"><i className="fa fa-repeat" aria-hidden="true"></i></button>
 
                 </div>
             </div>

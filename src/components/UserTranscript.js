@@ -1,8 +1,8 @@
 import './Index.css'
 
-export const UserTranscript = ({words,startTime,index,wordClick,currentTime})=>
+export const UserTranscript = ({words,startTime,index,wordClick,currentTime,searchText})=>
 {
-    console.log(currentTime,words,'currentTime')
+    
     return <div className={`user-transcript ind-${index}`}>
         <div className="row">
             {index===1?<div className="col-md-1"></div>:null}
@@ -10,7 +10,15 @@ export const UserTranscript = ({words,startTime,index,wordClick,currentTime})=>
                 <div className="time">{startTime}</div>
             </div>
             <div className={`col-md-${index === 1 ? '10' : '9'} text`}>
-                {words.map(w => <span className={`${((currentTime>=w.startTime)&&(currentTime<w.endTime))?'active':''} word`} onClick={()=>wordClick(w)}>{w.word} </span>)}
+                {words.map(w => {
+                        // const isSearch = searchText?(w.word.toLowerCase().includes(searchText.toLowerCase())):false;
+                        // if (isSearch)
+                        // {
+                        //     w.word.isSearchText = true;                
+                        // }
+                    
+                    return <span className={`${((currentTime >= w.startTime) && (currentTime < w.endTime)) ? 'active' : ''} ${w.isSearchText ? 'search-text' : ''} word`} onClick={() => wordClick(w)}>{w.word} </span>
+                })}
             </div>
         </div>
     </div>
