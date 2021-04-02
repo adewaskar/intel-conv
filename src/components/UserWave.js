@@ -34,13 +34,13 @@ export const UserWave = ({transcript,total_time,index,setCurrentTime,currentTime
       <div  onClick={e => {
                 var rect = e.target.getBoundingClientRect();
                 var x = e.clientX - rect.left; //x position within the element.
-                const currentTime = (x / rect.width)*total_time;
+            const currentTime = (x / rect.width) * total_time;
                 // setCurrentTime(currentTime);
             }} className="col-md-9" style={{borderBottom:index===0?'1px solid':''}}>
             <div>
                 <div className="tiles-flex" style={{ display: 'flex', position: 'relative' }}>
-                    {words.map(w => {
-                            return <Tile index={index} word={w} total_time = { total_time }/>
+                    {words.map((w,i) => {
+                            return <Tile key={i} index={index} word={w} total_time = { total_time }/>
                         })
                     }
                 </div>

@@ -118,3 +118,14 @@
     font-weight: 600;
     color: #3aa7f6;;
 }
+
+.tag.speed{
+    display: inline-block;
+    width: 53px;
+    /* padding: 10px; */
+    background: gret;
+    background: #fff;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 13px;
+}

@@ -8,9 +8,9 @@ export const Transcript = ({transcript,currentTime,wordClick,setSearchText,searc
             <div className="col-md-1"></div>
             <div className="col-md-11">
             <div className="search-transcript">
-            <div class="input-group mb-3 search-box">
-            <span class="input-group-text" id="basic-addon1"><span className="fa fa-search"></span> </span>
-            <input onChange={(e)=>setSearchText(e.target.value)} type="text" class="form-control" placeholder="Search call transcript" aria-label="Username" aria-describedby="basic-addon1" />
+            <div className="input-group mb-3 search-box">
+            <span className="input-group-text" id="basic-addon1"><span className="fa fa-search"></span> </span>
+            <input onChange={(e)=>setSearchText(e.target.value)} type="text" className="form-control" placeholder="Search call transcript" aria-label="Username" aria-describedby="basic-addon1" />
             </div>
 
         </div>

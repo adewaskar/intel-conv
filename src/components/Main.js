@@ -10,7 +10,7 @@ let audio = new Audio(AUDIO)
 
 export const Main = ({})=>
 {
-    const TRANSCRIPT = JSON.parse(JSON.stringify(DATA));
+    const TRANSCRIPT = JSON.parse(JSON.stringify(DATA)); // pls ignore this way of cloning
         TRANSCRIPT.word_timings.forEach(wt => {
             wt.forEach(w => {
                 w.startTime=Number(w.startTime.replace('s',''))            
@@ -31,15 +31,16 @@ export const Main = ({})=>
         },[]);
     
     audio.crossOrigin = 'anonymous';
+    console.log(player.play,'plplplplp')
     return <div className="main">
         <div className="container-fluid">
             <Header player={player} setPlay={(play) => {
                 if (play)
                 {
-                 audio.play();                    
+                audio.play();                    
                 }
                 else {
-                    audio.pause();
+                audio.pause();
                 }
 
                 setPlayer({

@@ -2,7 +2,7 @@ import { UserWave } from "./UserWave"
 
 export const Waveform = ({transcript,currentTime,setCurrentTime,index})=>
 {
-    const D = JSON.parse(JSON.stringify(transcript));
+    const D = JSON.parse(JSON.stringify(transcript)); // pls ignore this way of cloning
     const total_time = D.word_timings.pop().pop().endTime;
     return <div className="waveform">
         <div className="row" style={{marginBottom:'25px',paddingTop:'20px'}}>
