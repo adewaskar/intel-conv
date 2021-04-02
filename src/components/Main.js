@@ -31,7 +31,6 @@ export const Main = ({})=>
         },[]);
     
     audio.crossOrigin = 'anonymous';
-    const audioEl = useRef(null)
     return <div className="main">
         <div className="container-fluid">
             <Header player={player} setPlay={(play) => {
@@ -43,11 +42,12 @@ export const Main = ({})=>
                     audio.pause();
                 }
                 setPlayer({
-                    play:play
+                    play: play,
+                    currentTime:player.currentTime
                 })
             }}/>
         </div>
-        <div className="container">
+        <div className="container-fluid">
             <Waveform setCurrentTime={t => {
                 setPlayer({currentTime: t,play:true });
             }} currentTime={player.currentTime}  transcript={data} />

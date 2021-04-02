@@ -7,7 +7,7 @@ export const UserTranscript = ({words,startTime,index,wordClick,currentTime,sear
         <div className="row">
             {index===1?<div className="col-md-1"></div>:null}
             <div className="col-md-1">
-                <div className="time">{startTime}</div>
+                <div className="time"><b>{startTime}</b></div>
             </div>
             <div className={`col-md-${index === 1 ? '10' : '9'} text`}>
                 {words.map(w => {

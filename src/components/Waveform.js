@@ -1,12 +1,12 @@
 import { UserWave } from "./UserWave"
 
-export const Waveform = ({transcript,currentTime,setCurrentTime})=>
+export const Waveform = ({transcript,currentTime,setCurrentTime,index})=>
 {
     const D = JSON.parse(JSON.stringify(transcript));
     const total_time = D.word_timings.pop().pop().endTime;
     return <div className="waveform">
-        <div className="row" style={{marginBottom:'25px',marginTop:'15px'}}>
-            <div className="col-md-3">
+        <div className="row" style={{marginBottom:'25px',paddingTop:'20px'}}>
+            <div className="col-md-3" style={{borderBottom:index===0?'1px solid':''}}>
                 <span style={{padding:'5px 10px',background:'#eff3f6',borderRadius:'5px'}}><b>{secondsToHms(currentTime)}</b> / {secondsToHms(total_time)}</span>
             </div>
         </div>
