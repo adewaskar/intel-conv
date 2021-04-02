@@ -31,7 +31,6 @@ export const Main = ({})=>
         },[]);
     
     audio.crossOrigin = 'anonymous';
-    console.log(player.play,'plplplplp')
     return <div className="main">
         <div className="container-fluid">
             <Header player={player} setPlay={(play) => {
