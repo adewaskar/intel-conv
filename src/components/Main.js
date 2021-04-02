@@ -41,6 +41,7 @@ export const Main = ({})=>
                 else {
                     audio.pause();
                 }
+
                 setPlayer({
                     play: play,
                     currentTime:player.currentTime

@@ -11,7 +11,6 @@ export const UserTranscript = ({words,startTime,index,wordClick,currentTime,sear
             </div>
             <div className={`col-md-${index === 1 ? '10' : '9'} text`}>
                 {WORDS.map(w => {
-                    console.log(w,searchText,'searchTextsearchTextsearchTextsearchText')
                         const isSearch = searchText?(w.word.toLowerCase().includes(searchText.toLowerCase())):false;
                         if (isSearch)
                         {

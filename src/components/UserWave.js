@@ -24,11 +24,12 @@ export const UserWave = ({transcript,total_time,index,setCurrentTime,currentTime
         totalOtherUserTime += (w.endTime - w.startTime);
     })
     const timeProgress = Math.round(totalUserTime / (totalUserTime + totalOtherUserTime));
-    console.log(totalUserTime,words,'words')
     const width = ((currentTime / total_time) * 100);
     return <div className="row">
         <div className="col-md-3">
-            <span class={`name-prog-${index}`}>{ (timeProgress)*100}% User-{index+1}.</span>
+            <span class={`name-prog-${index}`}>
+                {/* {(timeProgress) * 100}% */}
+                User-{index + 1}.</span>
       </div>
       <div  onClick={e => {
                 var rect = e.target.getBoundingClientRect();
